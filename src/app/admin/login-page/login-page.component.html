@@ -1,0 +1,32 @@
+<div class="container">
+
+   <form [formGroup]="form" (ngSubmit)="submit()" class="footer__form form">
+      <div class="form__title">Войти в панель администратора</div>
+      <div class="error" *ngIf="auth.error$ | async as error">{{error}}</div>
+      <div *ngIf="message" class="error">{{message}}</div>
+      <div class="form__control">
+         <label for="email">Email:</label>
+         <input [ngClass]="{invalid: form.get('email')?.touched && form.get('email')?.invalid}" formControlName="email"
+            class="form__item" id="email" placeholder="Email..." type="tel">
+         <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="form__validation">
+            <div *ngIf="form.get('email')?.errors?.['required']">Поле email не может быть пустым</div>
+            <div *ngIf="form.get('email')?.errors?.['email']">Поле email заполнено не корректно</div>
+         </div>
+      </div>
+      <div class="form__control">
+         <label for="password">Пароль:</label>
+         <input [ngClass]="{invalid: form.get('password')?.touched && form.get('password')?.invalid}"
+            formControlName="password" class="form__item" id="password" type="text" placeholder="Пароль...">
+         <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched" class="form__validation">
+            <div *ngIf="form.get('password')?.errors?.['required']">Поле пароль не заполнено!!!</div>
+            <div *ngIf="form.get('password')?.errors?.['minlength']">Поле пароль должен содержить
+               {{form.get('password')?.errors?.['minlength'].actualLength | json}} символа, а содержит
+               {{form.get('password')?.errors?.['minlength'].requiredLength | json}} символов!!!</div>
+
+         </div>
+      </div>
+
+
+      <button [disabled]="form.invalid" class="form__button button" type="submit">Войти</button>
+   </form>
+</div>

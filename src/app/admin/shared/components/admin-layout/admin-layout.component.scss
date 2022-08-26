@@ -1,0 +1,55 @@
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   min-height: 100%;
+}
+.header {
+   background-color: crimson;
+   opacity: 0.9;
+}
+.main {
+   flex: 1 1 auto;
+}
+.footer {
+}
+
+.container {
+   max-width: 92vw;
+   margin: 0 auto;
+   padding: 0 1.5vw;
+}
+
+.header {
+   &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 8vh;
+   }
+
+   &__log {
+      font-size: 1.5vw;
+      color: gold;
+      font-weight: 600;
+   }
+
+   &__menu {
+   }
+}
+
+.menu {
+   &__list {
+      display: flex;
+      justify-content: space-between;
+      gap: 3vw;
+      font-size: 1.5vw;
+   }
+
+   &__item {
+   }
+
+   &__link {
+      color: gold;
+   }
+}

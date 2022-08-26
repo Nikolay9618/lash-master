@@ -1,0 +1,88 @@
+.button-promo {
+   &__row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 92vh;
+   }
+
+   &__button {
+      font-size: 2.5vw;
+      width: 50vw;
+      height: 10vh;
+   }
+}
+
+.promotion {
+   &__row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      height: 92vh;
+   }
+
+   &__text {
+      border: 0.2vw solid #4973ff;
+
+      padding-bottom: 3vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+   }
+
+   &__descr {
+      font-size: 1vw;
+   }
+
+   &__timer {
+      border: 0.2vw solid #4973ff;
+
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      flex-direction: column;
+   }
+
+   &__button {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+
+      flex-direction: column;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+   }
+}
+
+.button__appointment {
+   font-size: 2vw;
+   width: 25vw;
+   height: 10vh;
+}
+
+.title {
+   font-size: 6vh;
+   margin-bottom: 5vh;
+}
+.timer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 3vw;
+   &__block {
+      border: 0.3vw solid #4973ff;
+      border-radius: 30%;
+      width: 6vw;
+      height: 7vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1vw;
+   }
+}

@@ -1,0 +1,94 @@
+.backdrop {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: rgba(0, 0, 0, 0.3);
+}
+
+.modal {
+   padding: 1vw;
+   background: rgba(133, 130, 191, 1);
+   margin-top: 3vh;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transform: translate(-50%, -50%);
+   overflow-y: hidden;
+   z-index: 10;
+
+   &__form {
+      display: flex;
+      flex-direction: column;
+   }
+}
+.form {
+   &__title {
+      font-size: 2.5vw;
+      color: white;
+   }
+
+   &__validation {
+      font-size: 1.2vw;
+      color: red;
+   }
+
+   label {
+      font-size: 2vh;
+      color: white;
+   }
+   &__control {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3vh;
+   }
+
+   &__item {
+      width: 80vw;
+      height: 3.5vh;
+      background-color: rgba(187, 200, 207, 0.129);
+      font-size: 1vw;
+      border: 0.2vw solid #4973ff;
+      color: white;
+   }
+
+   &__button {
+      width: 14vw;
+
+      height: 3vh;
+
+      margin: 1vh 0 2.5vh 0;
+      font-size: 1.5vh;
+   }
+}
+
+.close {
+   &__btn {
+      cursor: pointer;
+      position: absolute;
+      top: 3vh;
+      right: 4vw;
+      &::after {
+         content: "";
+         position: absolute;
+         width: 4vh;
+         height: 0.7vh;
+         background: white;
+         transform: rotate(-45deg);
+      }
+      &::before {
+         content: "";
+         position: absolute;
+         width: 4vh;
+         height: 0.7vh;
+         background: white;
+         transform: rotate(45deg);
+      }
+   }
+}
+.button {
+}

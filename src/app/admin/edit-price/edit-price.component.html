@@ -1,0 +1,59 @@
+<div class="wrapper">
+   <div class="container">
+      <h2 class="price__header">Услуги которыми можно воспользоваться:</h2>
+      <div class="price__row">
+         <div class="price__service">
+            <ul class="menu__list">
+               <li class="menu__item">
+                  Наименование услуги:
+               </li>
+               <li class="menu__item">
+                  Классика
+               </li>
+               <li class="menu__item">
+                  1,5/2D-наращивание
+               </li>
+               <li class="menu__item">
+                  3D-наращивание
+               </li>
+               <li class="menu__item">
+                  Бархат (4D)
+               </li>
+            </ul>
+         </div>
+         <div class="price__price-write">
+            <ul class="menu__list">
+               <form [formGroup]="form" (ngSubmit)="submit()">
+
+                  <li class="menu__item">
+                     Стоимость:
+                  </li>
+                  <li class="menu__item">
+                     <input formControlName="oneD" type="text"><span
+                        *ngIf="form.get('oneD')?.invalid && form.get('oneD')?.touched">Поле не может быть
+                        пустым</span>
+                  </li>
+                  <li class="menu__item">
+                     <input formControlName="twoD" type="text">
+                     <span *ngIf="form.get('twoD')?.invalid && form.get('twoD')?.touched">Поле не может быть
+                        пустым</span>
+                  </li>
+                  <li class="menu__item">
+                     <input formControlName="threeD" type="text">
+                     <span *ngIf="form.get('threeD')?.invalid && form.get('threeD')?.touched">Поле не может быть
+                        пустым</span>
+                  </li>
+                  <li class="menu__item">
+                     <input formControlName="fourD" type="text">
+                     <span *ngIf="form.get('fourD')?.invalid && form.get('fourD')?.touched">Поле не может быть
+                        пустым</span>
+                  </li>
+                  <li>
+                     <button type="submit">Изменить прайс</button>
+                  </li>
+               </form>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>

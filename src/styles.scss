@@ -1,1 +1,134 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+
+*,
+*:before,
+*:after {
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+:focus,
+:active {
+   outline: none;
+}
+
+a:focus,
+a:active {
+   outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+   display: block;
+}
+
+html,
+body {
+   height: 100%;
+   width: 100%;
+   font-size: 100%;
+   line-height: 1;
+   font-size: 14px;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+   font-family: inherit;
+}
+
+input::-ms-clear {
+   display: none;
+}
+
+button {
+   cursor: pointer;
+}
+
+button::-moz-focus-inner {
+   padding: 0;
+   border: 0;
+}
+
+a,
+a:visited {
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: none;
+}
+
+ul li {
+   list-style: none;
+}
+
+img {
+   vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-size: inherit;
+   font-weight: 400;
+}
+
+.active {
+   text-decoration: underline;
+}
+
+.invalid {
+   border: 0.35vh solid red !important;
+}
+button[disabled] {
+   cursor: not-allowed;
+}
+
+.container {
+   max-width: 92vw;
+   margin: 0 auto;
+   padding: 0 1.5vw;
+}
+
+.button {
+   font-family: "Nunito", sans-serif;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   justify-content: center;
+   text-transform: uppercase;
+   letter-spacing: 1.3px;
+   font-weight: 600;
+   color: #ffffff;
+   background: #4973ff;
+   background: linear-gradient(90deg, #4973ff 0%, #4973ff 100%);
+   border: none;
+   border-radius: 80vh;
+   box-shadow: inset 5px 5px 50px rgba($color: #000000, $alpha: 0.5);
+   box-shadow: 12px 12px 24px #4973ff;
+   transition: all 0.3s ease-in-out 0s;
+   cursor: pointer;
+   outline: none;
+   position: relative;
+   padding: 1vh;
+}
+
+.button:hover,
+.button:focus {
+   color: #313133;
+   transform: scale(0.9);
+}

@@ -1,0 +1,77 @@
+<div class="wrapper">
+   <header class="header">
+      <div class="container">
+         <div class="header__wrapper">
+
+            <div [routerLink]="['/']" class="header__log">
+               Наращивание ресниц
+            </div>
+            <nav class="header__menu menu">
+               <ul class="menu__list">
+                  <li class="menu__item">
+                     <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                        class="menu__link">Главная</a>
+                  </li>
+                  <li class="menu__item">
+                     <a [routerLink]="['/about']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                        class="menu__link">О нас</a>
+                  </li>
+                  <li class="menu__item">
+                     <a routerLink="/price" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                        class="menu__link">Услуги</a>
+                  </li>
+                  <li class="menu__item">
+                     <a routerLink="/portfolio" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                        class="menu__link">Портфолио</a>
+                  </li>
+                  <li class="menu__item">
+                     <a routerLink="/contacts" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                        class="menu__link">Контакты</a>
+                  </li>
+                  <li class="menu__item">
+                     <a routerLink="/admin" class="menu__link">Панель администратора</a>
+                  </li>
+               </ul>
+            </nav>
+            <a (click)="showModal()" class="header__button button">Записаться</a>
+         </div>
+      </div>
+   </header>
+   <main class="main">
+      <router-outlet></router-outlet>
+
+      <ng-template appRef></ng-template>
+   </main>
+
+   <footer class="footer">
+      <div class="container">
+         <div class="footer__wrapper">
+            <form [formGroup]="form" (ngSubmit)="submit()" class="footer__form form">
+               <div class="form__title">Записаться на прием:</div>
+               <div class="form__control">
+                  <label for="tel">Телефон:</label>
+                  <input formControlName="tel" class="form__item" id="tel" type="tel">
+                  <div *ngIf="form.get('tel')?.invalid && form.get('tel')?.touched" class="form__validation">
+                     Поле телефон не может быть пустым
+                  </div>
+               </div>
+               <div class="form__control">
+                  <label for="name">Имя:</label>
+                  <input formControlName="name" class="form__item" id="name" type="text">
+                  <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="form__validation">
+                     Поле имя не может быть пустым
+                  </div>
+               </div>
+               <div class="form__control">
+                  <label for="wishes">Пожелания:</label>
+                  <input formControlName="wish" class="form__item" id="wishes" type="text">
+               </div>
+
+               <button [disabled]="form.invalid" class="form__button button" type="submit">Записаться</button>
+            </form>
+
+         </div>
+      </div>
+   </footer>
+
+</div>

@@ -1,0 +1,30 @@
+<div (click)="close.emit()" class="backdrop"></div>
+<div class="modal">
+   <form [formGroup]="form" (ngSubmit)="submit()" class="modal__form form">
+
+      <div class="form__close close">
+         <span class="close__btn" (click)="close.emit()"></span>
+      </div>
+      <div class="form__title">Записаться на прием:</div>
+      <div class="form__control">
+         <label for="tel">Телефон:</label>
+         <input formControlName="tel" class="form__item" id="tel" type="tel">
+         <div *ngIf="form.get('tel')?.invalid && form.get('tel')?.touched" class="form__validation">
+            Поле телефон не может быть пустым
+         </div>
+      </div>
+      <div class="form__control">
+         <label for="name">Имя:</label>
+         <input formControlName="name" class="form__item" id="name" type="text">
+         <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="form__validation">
+            Поле имя не может быть пустым
+         </div>
+      </div>
+      <div class="form__control">
+         <label for="wishes">Пожелания:</label>
+         <input formControlName="wish" class="form__item" id="wishes" type="text">
+      </div>
+
+      <button [disabled]="form.invalid" class="form__button button" type="submit">Записаться</button>
+   </form>
+</div>
