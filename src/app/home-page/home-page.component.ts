@@ -23,18 +23,14 @@ export class HomePageComponent implements OnInit {
 
   @ViewChild(RefDirective) refDif!: RefDirective
 
-  constructor(private postsService: PostsService, private resolver: ComponentFactoryResolver) {
+  constructor(private postsService: PostsService, private resolver: ComponentFactoryResolver) { }
+
+
+  ngOnInit(): void {
     if (localStorage.getItem('toggle')) {
       this.toggle = false
     }
 
-  }
-
-
-
-
-
-  ngOnInit(): void {
     this.updateClock();
     setInterval(() => {
       this.dateNow = Date.parse(new Date().toString())
